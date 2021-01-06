@@ -27,4 +27,16 @@ const Counter = () => {
   );
 };
 
-ReactDOM.render(<Player />, document.getElementById('root'));
+const App = () => {
+  return (
+    <div className="scoreboard">
+      <Header />
+
+      {/* Players list */}
+      <Player />
+    </div>
+  );
+};
+
+// Render top component
+ReactDOM.render(<App />, document.getElementById('root'));
