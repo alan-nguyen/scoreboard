@@ -1,3 +1,4 @@
+// Header of the board
 function Header(props) {
   return (
     <header>
@@ -7,6 +8,7 @@ function Header(props) {
   );
 }
 
+// Player Component
 const Player = (props) => {
   return (
     <div className="player">
@@ -17,17 +19,20 @@ const Player = (props) => {
   );
 };
 
+// Counter Component
 class Counter extends React.Component {
   state = {
     score: 0,
   };
 
+  // Increase a score by one
   incrementScore = () => {
     this.setState((prevState) => ({
       score: prevState.score + 1,
     }));
   };
 
+  // Decrease a score by one
   decrementScore = () => {
     this.setState((prevState) => ({
       score: prevState.score - 1,
@@ -55,6 +60,7 @@ class Counter extends React.Component {
   }
 }
 
+// Main App component
 class App extends React.Component {
   state = {
     players: [
@@ -75,6 +81,16 @@ class App extends React.Component {
         id: 4,
       },
     ],
+  };
+
+  // Remove a player
+  handleRemovePlayer = (id) => {
+    this.setState((prevState) => {
+      return {
+        // Filter the players which have the id different from the providing id
+        players: prevState.players.filter((p) => p.id !== id),
+      };
+    });
   };
 
   render() {
