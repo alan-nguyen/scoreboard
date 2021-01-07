@@ -100,7 +100,12 @@ class App extends React.Component {
 
         {/* Players list */}
         {this.state.players.map((player) => (
-          <Player name={player.name} key={player.id.toString()} />
+          <Player
+            name={player.name}
+            id={player.id}
+            key={player.id.toString()}
+            removePlayer={this.handleRemovePlayer}
+          />
         ))}
       </div>
     );
