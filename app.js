@@ -2,23 +2,26 @@ const players = [
   {
     name: 'Guil',
     score: 50,
+    id: 1,
   },
   {
     name: 'Treasure',
     score: 85,
+    id: 2,
   },
   {
     name: 'Alan',
     score: 95,
+    id: 3,
   },
   {
     name: 'James',
     score: 80,
+    id: 4,
   },
 ];
 
 function Header(props) {
-  console.log(props);
   return (
     <header>
       <h1>{props.title}</h1>
@@ -54,7 +57,11 @@ const App = (props) => {
 
       {/* Players list */}
       {props.initialPlayers.map((player) => (
-        <Player name={player.name} score={player.score} />
+        <Player
+          name={player.name}
+          score={player.score}
+          key={player.id.toString()}
+        />
       ))}
     </div>
   );
