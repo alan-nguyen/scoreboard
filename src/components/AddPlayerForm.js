@@ -16,7 +16,7 @@ class AddPlayerForm extends Component {
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.hanldeSumit}>
         <input
           type="text"
           value={this.state.value}
