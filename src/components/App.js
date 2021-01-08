@@ -74,6 +74,15 @@ class App extends Component {
     });
   };
 
+  getHighScore = (prevState) => {
+    const scores = prevState.players.map((p) => p.score);
+    const highScore = Math.max(...scores);
+    if (highScore) {
+      return highScore;
+    }
+    return null;
+  };
+
   render() {
     return (
       <div className="scoreboard">
