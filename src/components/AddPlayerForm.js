@@ -8,6 +8,12 @@ class AddPlayerForm extends Component {
   handleValueChange = (e) => {
     this.setState({ value: e.target.value });
   };
+
+  hanldeSumit = (e) => {
+    e.preventDefault();
+    this.props.addPlayer(this.state.value);
+  };
+
   render() {
     return (
       <form>
