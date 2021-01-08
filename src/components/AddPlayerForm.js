@@ -12,6 +12,9 @@ class AddPlayerForm extends Component {
   hanldeSumit = (e) => {
     e.preventDefault();
     this.props.addPlayer(this.state.value);
+
+    // Clear input after submit
+    this.setState({ value: '' });
   };
 
   render() {
