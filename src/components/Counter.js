@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 // Stateless component, just takes in props
 const Counter = ({ index, score, changeScore }) => {
   return (
@@ -20,6 +22,12 @@ const Counter = ({ index, score, changeScore }) => {
       </button>
     </div>
   );
+};
+
+Counter.propTypes = {
+  index: PropTypes.number,
+  score: PropTypes.number,
+  changeScore: PropTypes.func,
 };
 
 export default Counter;
