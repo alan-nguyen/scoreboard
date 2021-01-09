@@ -11,7 +11,6 @@ const PlayerList = () => {
           <React.Fragment>
             {context.players.map((player, index) => (
               <Player
-                {...player}
                 key={player.id.toString()}
                 index={index}
                 isHighScore={highScore === player.score}
