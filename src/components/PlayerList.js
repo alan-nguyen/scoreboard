@@ -15,7 +15,6 @@ const PlayerList = (props) => {
               {...player}
               key={player.id.toString()}
               index={index}
-              removePlayer={props.removePlayer}
               isHighScore={highScore === player.score}
             />
           ))}
@@ -26,7 +25,6 @@ const PlayerList = (props) => {
 };
 
 PlayerList.propTypes = {
-  removePlayer: PropTypes.func.isRequired,
   isHighScore: PropTypes.bool,
 };
 
