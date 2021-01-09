@@ -24,7 +24,7 @@ class Player extends PureComponent {
                 ✖
               </button>
               <Icon isHighScore={isHighScore} />
-              {players[index].id}
+              {players[index].name}
             </span>
           )}
         </Consumer>
