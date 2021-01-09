@@ -93,13 +93,14 @@ class App extends Component {
             changeScore: this.handleScoreChange,
             removePlayer: this.handleRemovePlayer,
             addPlayer: this.handleAddPlayer,
+            getHighScore: this.getHighScore,
           },
         }}
       >
         <div className="scoreboard">
           <Header />
 
-          <PlayerList getHighScore={this.getHighScore} />
+          <PlayerList />
 
           <AddPlayerForm />
         </div>
