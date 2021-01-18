@@ -1,35 +1,27 @@
-import React, { Component } from 'react';
-import { Consumer } from './Context';
+import React, { useContext, useRef } from 'react';
+import { ScoreboardContext } from './Context';
 
-class AddPlayerForm extends Component {
-  playerInput = React.createRef();
+const AddPlayerForm = () => {
+  const { actions } = useContext(ScoreboardContext);
+  const playerInput = useRef();
 
-  render() {
-    return (
-      <Consumer>
-        {(actions) => {
-          const handleSubmit = (e) => {
-            e.preventDefault();
-            actions.addPlayer(this.playerInput.current.value);
-            // Clear input after submit
-            e.currentTarget.reset();
-          };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    actions.addPlayer(playerInput.current.value);
+    e.currentTarget.reset();
+  };
 
-          return (
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                ref={this.playerInput}
-                placeholder="Enter a player's name"
-              />
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        ref={playerInput}
+        placeholder="Enter a player's name"
+      />
 
-              <input type="submit" value="Add Player" />
-            </form>
-          );
-        }}
-      </Consumer>
-    );
-  }
-}
+      <input type="submit" value="Add Player" />
+    </form>
+  );
+};
 
 export default AddPlayerForm;
